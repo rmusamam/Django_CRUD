@@ -18,3 +18,15 @@ def add(request):
 def load_form(request):
     form= EmployeeForm
     return  render(request,"load_form.html", {'form':form})
+
+def edit(request,id):
+    employee= Employee.objects.get(id=id)
+    return render(request,'edit.html',{'empolyee':employee})
+
+def update(request, id ):
+    employee=Employee.objects.get(id=id)
+    form= EmployeeForm(request.POST, instance=employee)
+    form.save()
+    return redirect('/show')
+
+
