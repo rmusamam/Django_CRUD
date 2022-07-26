@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
     path('show',views.show)
+    path('add',views.add)
 
 
 ]
