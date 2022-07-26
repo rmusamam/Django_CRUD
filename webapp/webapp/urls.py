@@ -1,7 +1,7 @@
 """webapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from crud import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
-    path('show',views.show),
+    path('load_form',views.load_form),
     path('add',views.add),
-    path('edit/<int:id>',views.edit)
-    path('update/<int:id>',views.update)
+    path('show',views.show),
+    path('edit/<int:id>',views.edit),
+    path('update/<int:id>',views.update),
     path('delete/<int:id>',views.delete)
-
 
 ]
